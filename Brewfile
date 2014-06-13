@@ -33,7 +33,7 @@ install narwhal
 install vim --override-system-vi
 install homebrew/dupes/grep
 install homebrew/dupes/screen
-install homebrew/php/php55 --with-gmp
+#install homebrew/php/php55 --with-gmp
 
 # Install other useful binaries
 install ack
