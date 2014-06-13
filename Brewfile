@@ -58,6 +58,32 @@ install webkit2png
 install xpdf
 install zopfli
 
+# Install @jbarratt's joints
+install pandoc
+install apg
+install cmake
+install cowsay
+install ctags
+install curl
+install gist
+install go
+install graphviz
+install jq
+install mtr
+install node
+install phantomjs
+install pstree
+install reattach-to-user-namespace
+install rmtrash
+install socat
+install sqlite
+install tmux
+install unrar
+install watchman
+install zeromq
+install python
+
+
 install homebrew/versions/lua52
 
 # Remove outdated versions from the cellar
