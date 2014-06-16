@@ -1,35 +1,38 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 ":BundleInstall! to update
 ":BundleClean to remove if you remove lines from this
 
-Bundle 'gmarik/vundle'
-Bundle 'L9'
-Bundle 'Gundo'
-Bundle 'Python-mode-klen'
-Bundle 'FuzzyFinder'
-Bundle 'UltiSnips'
-Bundle 'Solarized'
-Bundle 'fugitive.vim'
-Bundle 'vim-octopress'
-Bundle 'plantuml-syntax'
-Bundle 'Puppet-Syntax-Highlighting'
-Bundle 'repeat.vim'
-Bundle 'surround.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'matthias-guenther/hammer.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle "lepture/vim-jinja"
-Bundle 'VOoM'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'dgryski/vim-godef'
-Bundle 'tpope/vim-markdown'
+Plugin 'L9'
+Plugin 'Gundo'
+Plugin 'Python-mode-klen'
+Plugin 'FuzzyFinder'
+Plugin 'UltiSnips'
+Plugin 'Solarized'
+Plugin 'fugitive.vim'
+Plugin 'vim-octopress'
+Plugin 'plantuml-syntax'
+Plugin 'Puppet-Syntax-Highlighting'
+Plugin 'repeat.vim'
+Plugin 'surround.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'matthias-guenther/hammer.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'lepture/vim-jinja'
+Plugin 'VOoM'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'dgryski/vim-godef'
+Plugin 'tpope/vim-markdown'
+
+call vundle#end() 
+filetype plugin indent on
 
 set nobackup
 set noswapfile
@@ -130,7 +133,6 @@ let g:syntastic_auto_loc_list = 1
 imap jj <Esc>
 
 syntax enable
-filetype plugin indent on
 
 let g:solarized_termtrans=1
 "let g:solarized_contrast  = "light"
