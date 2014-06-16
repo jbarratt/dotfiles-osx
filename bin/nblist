@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+
+import subprocess
+import re
+
+"""
+    Caveat: Works on only OSX for now.
+    Lists running ipython notebooks and their working directories.
+
+        $ nblist
+          http://127.0.0.1:8088 | /Users/me/work/notebooks
+          http://127.0.0.1:8089 | /Users/me/work/otherproject
+
+    * Pull a process list
+    * For all ipython notebook processes,
+      * Find their working directories
+      * find their ports
+    * Print all unique pairs
+"""
+
+
+def get_ip_port(pid):
+    """ Given a PID, return the first TCP ip:port it's listening on """
+    lsof = subprocess.check_output(['lsof', '-P', '-n', '-p', pid])
+    m = re.search('TCP\s+([0-9:.]+)\s+\(LISTEN\)', lsof)
+    if m:
+        ip_port = m.groups()[0]
+        return ip_port
+
+
+def get_pwd(pid):
+    """ Given a PID, return the working directory of the process """
+    ps_env = subprocess.check_output(['ps', '-p', pid, '-wwwE'])
+    m = re.search('\sPWD=(.*?)\s', ps_env)
+    pwd = m.groups()[0]
+    return pwd
+
+
+def main():
+    notebooks = {}
+    pids = []
+    ps_output = subprocess.check_output(['ps', '-aww'])
+    for row in ps_output.split('\n'):
+        if row.find('ipython notebook') != -1:
+            pids.append(row.split()[0])
+
+    for pid in pids:
+        pwd = get_pwd(pid)
+        ip_port = get_ip_port(pid)
+        if ip_port:
+            notebooks[pwd] = 'http://' + ip_port
+
+    for path, ip_port in notebooks.items():
+        print "{} | {}".format(ip_port, path)
+
+if __name__ == '__main__':
+    main()

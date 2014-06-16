@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+use Data::Dumper;
+
+use YAML qw(LoadFile);
+
+my $dbs = LoadFile('/opt/mt/etc/database.yml');
+
+my $db = $ARGV[0] || '';
+
+if($db eq "mediatemple") {
+    $db = "DATABASE";
+} elsif($db !~ /_DATABASE$/i) {
+     $db = uc($db) . '_DATABASE'; 
+}
+
+if(defined($dbs->{$db})) {
+    # not super secure, but not the worst way to do it.
+
+    $ENV{'MYSQL_PWD'} = $dbs->{$db}{'password'};
+    my $user = $dbs->{$db}{'username'};
+    my($dbi, $mysql, $dbname, $host) = split(':', $dbs->{$db}{'dsn'});
+
+    system("/usr/bin/mysql -D $dbname -h $host -u $user");
+
+} else {
+    print join("\n", map { lc(substr($_, 0, -9)) } keys %$dbs);
+    print "mediatemple\n";
+}

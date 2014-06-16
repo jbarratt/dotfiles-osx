@@ -1,0 +1,7 @@
+# stolen from http://amjith.blogspot.com/2011/08/scripting-tmux-layouts.html
+
+selectp -t 0     # select pane 0
+splitw -h -p 40  # split pane 0 vertically by 60%
+selectp -t 1     # select pane 1
+splitw -v -p 35  # split pane 1 horizontally by 25%
+selectp -t 0     # select pane 0
