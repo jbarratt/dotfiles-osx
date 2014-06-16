@@ -1,0 +1,40 @@
+snippet object "Quickie Object Map" !b
+
+${1:ObjectName}
+${1/\w/=/g}
+
+Object
+^^^^^^
+
+Field Name  Type  Description
+
+Relationships
+^^^^^^^^^^^^^
+
+.. uml::
+
+    $1 o-- OtherObject
+
+Events
+^^^^^^
+
+Action  Note
+
+endsnippet
+
+snippet id "Letters and numbers id" !b
+`!p 
+if not snip.c:
+   chars = [random.choice(string.ascii_uppercase + string.digits) for x in range(9)]
+   snip.rv = ''.join(chars)
+`
+endsnippet
+
+snippet nikolameta "Nikola Metadata" b
+.. title: 
+.. slug: index
+.. date: `date +'%Y/%m/%d %H:%M:%S'`
+.. description: 
+.. tags: 
+.. link: 
+endsnippet
