@@ -51,5 +51,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 alias pipr='pip install --no-deps --ignore-installed'
 alias dropboxgit='if [[ -e .git ]] ; then NAME=$(basename `pwd`) ; git init --bar ~/Dropbox/git/$NAME.git ; git remote add origin ~/Dropbox/git/$NAME.git ; git push -u origin master ; echo "Dropbox remote created" ; else ; echo "not currently in a git repo" ; fi'
 alias rpi_ip="arp -a | grep b8:27:eb | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
-alias key_rpi="ssh-copy-id pi@`rpi_ip`"
+# alias key_rpi="ssh-copy-id pi@`rpi_ip`"
 alias ipn='ipython notebook'
