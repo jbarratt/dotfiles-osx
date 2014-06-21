@@ -138,3 +138,8 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[user]
+	name = Joshua Barratt
+	email = jbarratt@serialized.net
+[push]
+	default = simple
