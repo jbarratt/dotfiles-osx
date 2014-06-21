@@ -43,5 +43,4 @@ cask install google-drive 2> /dev/null
 cask install github 2> /dev/null
 cask install git-annex 2> /dev/null
 cask install boot2docker 2> /dev/null
-cask install arq 2> /dev/null
 cask install xquartz 2> /dev/null

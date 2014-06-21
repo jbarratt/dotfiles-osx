@@ -82,6 +82,7 @@ install unrar
 install watchman
 install zeromq
 install python
+install terminal-notifier
 
 
 install homebrew/versions/lua52
