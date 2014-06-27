@@ -83,7 +83,14 @@ install watchman
 install zeromq
 install python
 install terminal-notifier
-
+install youtube-dl
+install ffmpeg
+install sdl 
+install sdl_image 
+install sdl_mixer 
+install sdl_ttf 
+install portmidi
+install mercurial
 
 install homebrew/versions/lua52
 

@@ -7,6 +7,7 @@
 # Requires: terminal-notifier. Install with:
 #   gem install terminal-notifier
 
+PATH="/usr/local/bin/:$PATH"
 TERM_APP='/Applications/Terminal.app'
 BREW_EXEC='/usr/local/bin/brew'
 TERMINAL_NOTIFIER=`which terminal-notifier`
