@@ -53,3 +53,5 @@ alias dropboxgit='if [[ -e .git ]] ; then NAME=$(basename `pwd`) ; git init --ba
 alias rpi_ip="arp -a | grep b8:27:eb | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'"
 # alias key_rpi="ssh-copy-id pi@`rpi_ip`"
 alias ipn='ipython notebook'
+source ~/perl5/perlbrew/etc/bashrc
+export PERL5LIB=/Users/jbarratt/perl5/lib/perl5/darwin-thread-multi-2level/:/Users/jbarratt/perl5/:
