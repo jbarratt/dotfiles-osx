@@ -82,6 +82,7 @@ install unrar
 install watchman
 install zeromq
 install python
+install pypy
 install terminal-notifier
 install youtube-dl
 install ffmpeg
@@ -91,6 +92,7 @@ install sdl_mixer
 install sdl_ttf 
 install portmidi
 install mercurial
+install mosh
 
 install homebrew/versions/lua52
 
