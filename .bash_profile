@@ -47,6 +47,7 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
+eval "$(dvm env)" 
 . ~/bin/z.sh
 alias pipr='pip install --no-deps --ignore-installed'
 alias dropboxgit='if [[ -e .git ]] ; then NAME=$(basename `pwd`) ; git init --bar ~/Dropbox/git/$NAME.git ; git remote add origin ~/Dropbox/git/$NAME.git ; git push -u origin master ; echo "Dropbox remote created" ; else ; echo "not currently in a git repo" ; fi'
