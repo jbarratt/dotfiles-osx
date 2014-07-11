@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+import hashlib
+import requests
+import sys
+import subprocess
+import time
+
+URL = sys.argv[1]
+
+
+def hash_url(url):
+    body = requests.get(URL)
+    digest = hashlib.sha224(body.content).hexdigest()
+    return digest
+
+
+def main():
+    last_hash = hash_url(URL)
+    while True:
+        now_hash = hash_url(URL)
+        if now_hash != last_hash:
+            subprocess.call(['terminal-notifier', '-title', 'URL changed',
+                             '-message', 'URL changed'])
+            sys.exit(1)
+        last_hash = now_hash
+        time.sleep(1)
+
+main()
